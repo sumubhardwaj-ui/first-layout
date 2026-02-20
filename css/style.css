@@ -1,57 +1,316 @@
-:root{
+:root {
   --wrap: 1080px;
-  --green:#7a8b77;
-  --accent:#35623b;
-  --muted:#777;
+  --green: #7a8b77;
+  --accent: #35623b;
+  --muted: #777;
 }
-*{box-sizing:border-box}
-body{font-family:'Open Sans',sans-serif;color:#333;margin:0;line-height:1.5}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
-.site-header{background:#fff;border-bottom:1px solid #eee}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.logo{font-family:'Playfair Display',serif;font-weight:700;color:var(--green);font-size:20px}
-.main-nav a{margin:0 10px;text-decoration:none;color:#555;font-size:14px}
-.cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:4px;text-decoration:none}
 
-.hero{background:#f1f3f0;padding:60px 0}
-.hero-inner{display:flex;align-items:center}
-.hero-media{flex:1;background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1400&q=80&auto=format&fit=crop');background-size:cover;background-position:center;height:280px;border-radius:4px}
-.hero-text{flex:1;padding-left:40px}
-.hero-text h1{font-family:'Playfair Display',serif;color:var(--green);font-size:56px;margin:0;font-weight:400}
+* {
+  box-sizing: border-box;
+}
 
-.main-content{padding:40px 0}
-.intro{display:flex;gap:30px;align-items:center;margin-bottom:40px}
-.intro-text{flex:2}
-.intro-img img{width:220px;border-radius:4px}
+body {
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Playfair Display", serif;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
 
-.section-title{text-align:center;color:var(--green);font-family:'Playfair Display',serif;margin-bottom:20px}
-.grid{display:grid;gap:24px}
-.grid-4{grid-template-columns:repeat(4,1fr)}
-.grid-2{grid-template-columns:repeat(2,1fr)}
-.cat img{width:100%;height:180px;object-fit:cover;border-radius:4px}
-.cat h4{text-align:center;margin-top:10px;color:#fff;background:var(--green);display:inline-block;padding:8px 16px;border-radius:2px;margin-left:10px}
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-.post img{width:100%;height:220px;object-fit:cover;border-radius:4px}
-.post h4{margin:12px 0 6px;font-family:'Playfair Display',serif;color:var(--green)}
-.excerpt{color:var(--muted);font-size:14px}
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
 
-.philosophy{margin:60px 0}
-.philo-text{max-width:680px}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+}
 
-.subscribe{margin:40px 0}
-.subscribe-form{display:grid;gap:12px;max-width:600px}
-.subscribe-form input,.subscribe-form textarea{padding:10px;border:1px solid #ddd;border-radius:2px}
-.btn{background:var(--accent);color:#fff;padding:10px 12px;border:none;border-radius:2px}
+.logo {
+  flex-direction: column;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: var(--green);
+  font-size: 20px;
+}
 
-.site-footer{background:#f6f6f6;padding:20px 0;margin-top:30px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center}
-.footer-nav a{margin-left:12px;color:#666;text-decoration:none}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
 
-@media(max-width:900px){
-  .grid-4{grid-template-columns:repeat(2,1fr)}
-  .hero-inner{flex-direction:column}
-  .hero-media{height:200px;width:100%}
-  .hero-text{padding-left:0;margin-top:16px}
-  .intro{flex-direction:column}
-  .grid-2{grid-template-columns:1fr}
+/* Links */
+.menu a {
+  text-decoration: none;
+  color: #658265;
+  /* green tone */
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #2f4f3a;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #ffffff;
+  list-style: none;
+  padding: 5px 0;
+  width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.dropdown-menu li {
+  padding: 10px 25px;
+}
+
+.dropdown-menu li a {
+  font-size: 16px;
+  color: #4a6b52;
+}
+
+.dropdown-menu li a:hover {
+  color: #3e613e;
+  background-color: #ffffff;
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero {
+  background: #f1f3f0;
+  padding-left: 300px;
+  background-image: url("https://zf2xqj.yourbrand.studio/files/dynamicContent/sites/zf2xqj/images/en/webpage_12/m5p6bgzu/element_280/rwdMode_1/2400x800/Header_Home.webp");
+  height: 100vh;
+  background-position: bottom;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-media {
+  flex: 1;
+}
+
+.hero-text {
+  flex: 1;
+  padding-left: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", serif;
+  color: var(--green);
+  font-size: 74px;
+  font-weight: 400;
+}
+
+.main-content {
+  padding: 40px 0;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  padding: 100px 260px;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-text h2 {
+  color: #658265;
+  font-size: 35px;
+}
+
+.intro-grid-image {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-grid-image img {
+  width: 460px;
+  height: 342px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* .intro {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.intro-text {
+  flex: 2;
+}
+.intro-img img {
+  width: 220px;
+  border-radius: 4px;
+} */
+
+.section-title {
+  text-align: center;
+  color: var(--green);
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cat img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cat h4 {
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+  background: var(--green);
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 2px;
+  margin-left: 10px;
+}
+
+.post img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.post h4 {
+  margin: 12px 0 6px;
+  font-family: "Playfair Display", serif;
+  color: var(--green);
+}
+
+.excerpt {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.philosophy {
+  margin: 60px 0;
+}
+
+.philo-text {
+  max-width: 680px;
+}
+
+.subscribe {
+  margin: 40px 0;
+}
+
+.subscribe-form {
+  display: grid;
+  gap: 12px;
+  max-width: 600px;
+}
+
+.subscribe-form input,
+.subscribe-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 2px;
+}
+
+.site-footer {
+  background: #f6f6f6;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav a {
+  margin-left: 12px;
+  color: #666;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-inner {
+    flex-direction: column;
+  }
+
+  .hero-media {
+    height: 200px;
+    width: 100%;
+  }
+
+  .hero-text {
+    padding-left: 0;
+    margin-top: 16px;
+  }
+
+  .intro {
+    flex-direction: column;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
 }
